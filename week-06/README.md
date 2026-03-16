@@ -16,9 +16,9 @@ Data structures and built-in functions #2 (strings, dynamic memory allocation)
 ## Sample codes
 
 1. [`test_string.c`](./samples/test_string.c)
-2. [`test_ctype.c`](./samples/test_ctype.c)
-3. [`test_malloc.c`](./samples/test_malloc.c)
-4. [`test_calloc.c`](./samples/test_calloc.c)
+1. [`test_ctype.c`](./samples/test_ctype.c)
+1. [`test_malloc.c`](./samples/test_malloc.c)
+1. [`test_calloc.c`](./samples/test_calloc.c)
 
 ## Exercises
 
@@ -56,16 +56,17 @@ In this section, we list all the functions that should be known starting this we
 #### Functions of `stdio.h` for I/O handling
 
 1. `char *gets(char *start)`
+ 
+   * Reads the next line of the standard input to the memory address `start`.
+   * Returns:
 
-  * Reads the next line of the standard input to the memory address `start`.
-  * Returns:
-    * `NULL` if the case of `EOF`.
-    * the memory address `start` otherwise
+     * `NULL` if the case of `EOF`.
+     * the memory address `start` otherwise
 
 1. `int puts(char *start)`
 
-  * Writes the string at memory address `start` to the standard output. Also prints a newline character.
-  * Returns: *not important*
+   * Writes the string at memory address `start` to the standard output. Also prints a newline character.
+   * Returns: *not important*
 
 #### Functions of `stdlib.h` for data conversion
 
@@ -76,49 +77,49 @@ In this section, we list all the functions that should be known starting this we
 
 1. `size_t strlen(char *s)`
 
-  * Counts the characters until the first `0` ASCII code.
-  * Returns the length of parameter `s`.
+   * Counts the characters until the first `0` ASCII code.
+   * Returns the length of parameter `s`.
 
 1. `char *strcpy(char *left, char *right)`
 
-  * Copies parameter `right` to the memory address of parameter `left`.
-  * Returns the memory address of parameter `left`.
+   * Copies parameter `right` to the memory address of parameter `left`.
+   * Returns the memory address of parameter `left`.
 
 1. `char *strcat(char *left, char *right)`
 
-  * Concatenates parameter `right` to the value of parameter `left`.
-  * Returns the memory address of parameter `left`.
+   * Concatenates parameter `right` to the value of parameter `left`.
+   * Returns the memory address of parameter `left`.
 
 1. `int strcmp(char *left, char *right)`
 
-  * Compares parameters `left` and `right` based on their alphabetical order. The ASCII values are used in the comparison.
-  * Returns `0` if the two strings are equal.
-  * Returns `-1` if the parameter `left` goes first in the order.
-  * Returns `1` if the parameter `right` goes first in the order.
+   * Compares parameters `left` and `right` based on their alphabetical order. The ASCII values are used in the comparison.
+   * Returns `0` if the two strings are equal.
+   * Returns `<0` if the parameter `left` goes first in the order.
+   * Returns `>0` if the parameter `right` goes first in the order.
 
 1. `char *strchr(char *s, char c)`
 
-  * Determines the first position of character `c` in string `s`.
-  * Returns the memory address of the first occurrence of `c` in `s`.
-  * Returns `NULL` if `s` does not contain `c`.
+   * Determines the first position of character `c` in string `s`.
+   * Returns the memory address of the first occurrence of `c` in `s`.
+   * Returns `NULL` if `s` does not contain `c`.
 
 1. `char *strstr(char *s, char *p)`
 
-  * Determines the first position of string `p` in string `s`.
-  * Returns the memory address of the first occurrence of `p` in `s`.
-  * Returns `NULL` if `s` does not contain `p`.
+   * Determines the first position of string `p` in string `s`.
+   * Returns the memory address of the first occurrence of `p` in `s`.
+   * Returns `NULL` if `s` does not contain `p`.
 
 1. `char *strrchr(char *s, char c)`
 
-  * Determines the last position of character `c` in string `s`.
-  * Returns the memory address of the last occurrence of `c` in `s`.
-  * Returns `NULL` if `s` does not contain `c`.
+   * Determines the last position of character `c` in string `s`.
+   * Returns the memory address of the last occurrence of `c` in `s`.
+   * Returns `NULL` if `s` does not contain `c`.
 
 1. `char *strrstr(char *s, char *p)`
 
-  * Determines the last position of string `p` in string `s`.
-  * Returns the memory address of the last occurrence of `p` in `s`.
-  * Returns `NULL` if `s` does not contain `p`.
+   * Determines the last position of string `p` in string `s`.
+   * Returns the memory address of the last occurrence of `p` in `s`.
+   * Returns `NULL` if `s` does not contain `p`.
 
 
 ### Allocating in the heap
@@ -139,17 +140,17 @@ In this section, we list all the functions that should be known starting this we
 
 1. `void *malloc(size_t size)`
 
-  * Allocates a memory segment with the number of `size` bytes.
-  * Returns the start memory address of the allocated memory segment.
+   * Allocates a memory segment with the number of `size` bytes.
+   * Returns the start memory address of the allocated memory segment.
 
 1. `void *calloc(size_t number, size_t element_size)`
 
-  * Allocates a memory segment for `number` elements, each having the size of `element_size` bytes.
-  * Returns the start memory address of the allocated memory segment.
+   * Allocates a memory segment for `number` elements, each having the size of `element_size` bytes.
+   * Returns the start memory address of the allocated memory segment.
 
 1. `void free(void *address)`
 
-  * De-allocates the memory segment allocated for the given start memory address using `malloc()` and `calloc()` functions.
+   * De-allocates the memory segment allocated for the given start memory address using `malloc()` and `calloc()` functions.
 
 ### Functions of `ctype.h`
 
